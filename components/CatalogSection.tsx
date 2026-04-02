@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import * as motion from "motion/react-client"
 import Image from "next/image";
 import Link from "next/link";
-import { BookPagination } from "./BookPagination";
+import { BookPagination, BookSortation } from "./BookPagination";
 
 export function getRemainingDays(target: string) {
   return Math.max(
@@ -49,6 +49,7 @@ export default async function CatalogSection({ searchParams }: any) {
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 px-4">
           <SidebarTrigger className="-ml-1" />
+          <BookSortation data={data}/>
         </header>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-2">
