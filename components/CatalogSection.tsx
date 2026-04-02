@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import * as motion from "motion/react-client"
 import Image from "next/image";
 import Link from "next/link";
+import { BookPagination } from "./BookPagination";
 
 export function getRemainingDays(target: string) {
   return Math.max(
@@ -20,9 +21,11 @@ export function getRemainingDays(target: string) {
 }
 
 export default async function CatalogSection({ searchParams }: any) {
-  const page = searchParams.page || 1
-  const limit = searchParams.limit || 10
-  const sortBy = searchParams.sortBy || "terbaru"
+  const resolvedSearchParams = await searchParams;
+  console.log(resolvedSearchParams)
+  const page = resolvedSearchParams.page || 1
+  const limit = resolvedSearchParams.limit || 10
+  const sortBy = resolvedSearchParams.sortBy || "terbaru"
 
   const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNiIsImVtYWlsIjoiZXNwbG9yYW1lZGlhQGdtYWlsLmNvbSIsImlhdCI6MTc3NTAwMzYwMCwiZXhwIjoxNzc1MTMzMjAwfQ.QUJXtxQMd8FSQ38B1LTncQ2dgNQd_8Tv1YPB121u7W4"
   const res = await fetch(`https://api-dev.ziyadbooks.com/api/v1/ecommerce/products/all/category?page=${page}&limit=${limit}&sortBy=${sortBy}`, {
@@ -121,6 +124,7 @@ export default async function CatalogSection({ searchParams }: any) {
           </div>
 
         </div>
+        <BookPagination data={data} />
       </SidebarInset>
     </SidebarProvider>
   </section>

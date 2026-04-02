@@ -98,7 +98,7 @@ export function PaginationWithLinks({
 
   const navToPageSize = useCallback(
     (newPageSize: number) => {
-      const key = pageSizeSelectOptions?.pageSizeSearchParam || "pageSize";
+      const key = pageSizeSelectOptions?.pageSizeSearchParam || "limit";
       const newSearchParams = new URLSearchParams(searchParams || undefined);
       newSearchParams.set(key, String(newPageSize));
       newSearchParams.delete(pageSearchParam || "page"); // Clear the page number when changing page size
@@ -272,7 +272,7 @@ function SelectRowsPerPage({
 }) {
   return (
     <div className="flex items-center gap-4">
-      <span className="whitespace-nowrap text-sm">Rows per page</span>
+      <span className="whitespace-nowrap text-sm">Item per halaman</span>
 
       <Select
         value={String(pageSize)}
