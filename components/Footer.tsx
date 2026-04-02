@@ -16,11 +16,6 @@ const socialLinks = [
     label: "Github",
   },
   {
-    icon: Linkedin,
-    href: "#",
-    label: "Linkedin",
-  },
-  {
     icon: Instagram,
     href: "#",
     label: "Instagram",
