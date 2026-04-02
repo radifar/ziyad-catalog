@@ -49,7 +49,7 @@ export default async function CatalogSection({ searchParams }: any) {
         </header>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-2">
-            {books.map((book, index) => (
+            {books.map((book:any, index:any) => (
               <motion.div 
                 key={book.id}
                 initial={{ opacity: 0, y: 20}}

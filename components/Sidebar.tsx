@@ -48,7 +48,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 </SidebarMenuButton>
                 {item.items?.length ? (
                   <SidebarMenuSub className="ml-0 border-l-0 px-1.5">
-                    {item.items.map((item) => (
+                    {item.items.map((item:any) => (
                       <SidebarMenuSubItem key={item.title}>
                         <SidebarMenuSubButton
                           isActive={item.isActive}
