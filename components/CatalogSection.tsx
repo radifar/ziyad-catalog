@@ -96,7 +96,7 @@ export default async function CatalogSection({ searchParams }: any) {
                       </p>
                     )}
 
-                    {!book.preorder && 0 > book.sisastok && book.sisastok < 10 && (
+                    {!book.preorder && book.sisastok > 0 && book.sisastok < 10 && (
                       <p className="text-right mt-2 mb-1">
                         Stok: <span className="font-bold">MENIPIS</span>
                       </p>
