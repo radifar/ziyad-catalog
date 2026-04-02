@@ -51,6 +51,7 @@ export default async function CatalogSection({ searchParams }: any) {
           <SidebarTrigger className="-ml-1" />
           <BookSortation data={data}/>
         </header>
+        <Separator className="mb-4" />
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 gap-2">
             {books.map((book:any, index:any) => (
@@ -125,6 +126,7 @@ export default async function CatalogSection({ searchParams }: any) {
           </div>
 
         </div>
+        <Separator className="mt-6 mb-4" />
         <BookPagination data={data} />
       </SidebarInset>
     </SidebarProvider>
